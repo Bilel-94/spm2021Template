@@ -1,17 +1,12 @@
 package pros.unicam.spm2021.practice.Selenium;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SeleniumTest {
 
@@ -45,7 +40,7 @@ class SeleniumTest {
 			System.setProperty("webdriver.chrome.driver", projectPath+"/drivers/mac/chromedriver");
 		}
 		if(System.getProperty("os.name").contains("Windows")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\studente\\Documents\\BrowserDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
 		}
 		driver = new ChromeDriver();
 	}
@@ -60,7 +55,7 @@ class SeleniumTest {
 	}
 
 	@Test
-	//@Disabled
+	@Disabled
 	void checkProsSite() throws InterruptedException {
 		
 		driver.get("http://pros.unicam.it/");
@@ -73,7 +68,7 @@ class SeleniumTest {
 		//System.out.println(at);		
 		Thread.sleep(4000);
 
-		Assert.assertEquals(et,at);
+		assertEquals(et,at);
 		
 		
 	}
