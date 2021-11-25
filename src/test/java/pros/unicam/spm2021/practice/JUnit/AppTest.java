@@ -26,6 +26,6 @@ public class AppTest
     @Disabled
     public void shouldAnswerWithTrue2()
     {
-        assertTrue( false );
+        assertTrue( true );
     }
 }
